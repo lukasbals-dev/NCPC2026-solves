@@ -1,0 +1,56 @@
+During the competition:
+
+During the competition, we as a team did manage to write a somewhat working
+solution for this problem, the logic in the now section follows my own logic
+while in the competition, however, we somehow managed to create an edge
+case in our own code.
+
+Now:
+Reading the solution again the problem appears quite simple without the
+time and competition stress.
+The display is made up of '.' and '#'. The '.' corresponds to a 0 (turned off),
+and a '#' corresponds to 1 (turned on).
+As we take the input, we can easily convert our 7 segment display to an array
+of booleans (or if you want to be fancy a single integer).
+First we will check the first row and second collumn for the top segment, that
+would correspond to [0][1] posistion of the given input. Then we can check
+second row and first collumn ([1][0]) for the second segment and so on, I will call this decoding.
+Before we start checking, we need to write out each and every number as our
+"segmented" numbers, for example, a 0 in our segmented array would look like
+this -> "1110111", as only the middle part would be turned off, while an 
+8 would look like "1111111", as all of the segments need to be turned on to
+show an 8. You of course can choose a different way it works but i will go with:
+1st bit - the top segment
+2nd bit - the top left segment
+3th bit - the top right segment
+4th bit - the middle segment
+5th bit - the bottom left segment
+6th bit - the bottom right segment
+7th bit - the bottom segment
+
+All of the numbers as segments :
+0 -> "1110111"
+1 -> "0010010"
+2 -> "1011101"
+3 -> "1011011"
+4 -> "0111010"
+5 -> "1101011"
+6 -> "1101111"
+7 -> "1010010"
+8 -> "1111111"
+9 -> "1111011"
+
+Now the problem only calls only for 2 digits. So lets say we have the segment
+display showing an 8, we need a function that would find, what I will call, a
+"fast solution". We check if the given input, that has gone trough our segment
+decoding, matches any of the known numbers as segments. If it does, great
+we have our solution. If not, we move on to the next step. 
+Next we loop trough the rest of the numbers (10 trough 99). We take
+the first digit and the last digit, (firstDigit = theLoopCount/10, secondDigit = theLoopCount%10),
+then xor the first digit with the second digit and check for if the our
+xor'ed number matches the given input, if it does, add theLoopCount to the valid solutions.
+
+AI USAGE:
+the logic it self was NOT explained by AI. The code was writen with the HELP OF AI.
+The AI used - copilot mai-code-1.1-flash. Comments where left
+in the code where AI was used.

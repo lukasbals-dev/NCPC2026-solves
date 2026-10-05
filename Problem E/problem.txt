@@ -1,0 +1,79 @@
+The days-without-incident counter at your factory has become difficult
+to interpret. Every morning, the display is reset so that all segments are off. 
+When a digit is entered into the display, every segment belonging to that
+digit is flipped: from off to on, or from on to off. 
+This worked just fine as long as the counter only ever needed to show
+a single digit.
+
+However, thanks to your diligent work with safety protocols, 
+the number of days without incident now routinely reaches 
+two-digit numbers. Since the display has room for only one digit, 
+a two-digit number is entered by typing its two digits one after the other, 
+into the same display. This may well flip a particular segment off again.
+
+The number of days without incident is called the streak length and satisfies.
+It is entered without leading s, so a single-digit streak length 
+is entered as one digit.
+
+Given the state of the display after the streak length has been entered, 
+determine which values of  could have produced it.
+Input
+
+The input consists of:
+
+    lines, each with  characters, each character being either “.” or “#”.
+
+The input describes a possible state of the seven-segment display, with 
+two characters used for each of the seven segments. 
+Each segment can be off or on, shown as “..” or “##”, respectively, 
+either horizontally or vertically. The parts of the input that don’t 
+correspond to segments are always shown as “.” for readability.
+
+Output
+
+Output the possible streak lengths, without leading s. 
+If there is more than one possible streak length, report 
+all of them in sorted order. If no streak length 
+could have resulted in the input display, output “impossible”.
+
+Sample Input 1 	Sample Output 1
+
+.##.
+#..#
+#..#
+.##.
+#..#
+#..#
+.##.
+
+	
+
+8
+
+Sample Input 2 	Sample Output 2
+
+....
+....
+....
+....
+#...
+#...
+....
+
+	
+
+56 65 89 98
+
+Sample Input 3 	Sample Output 3
+
+....
+....
+....
+....
+....
+....
+.##.
+
+	
+
+impossible
