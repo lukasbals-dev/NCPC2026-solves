@@ -36,12 +36,14 @@ int main(){
     }
     segments = segmentDecoding(input);
     vector<int> valid;
-    for (int i = 0; i < 99; i++){
+    //AI was used to find a fatal bug where
+    //only up to 98 would be checked
+    for (int i = 0; i <= 99; i++){
         array<int, 7> mask = {};
         if (i < 10){
-            if (segments == validSegments[i]){
-                mask = validSegments[i];
-            }
+            //AI was used to find an unnecessary check
+            //since we are checking for valid segments later
+            mask = validSegments[i];
         }
         else{
             int firstDigit = i/10;
@@ -59,7 +61,9 @@ int main(){
         cout << "impossible";
     }
     for (int i = 0; i < valid.size(); i++){
-        cout << valid[i] << " ";
+        //AI was used to find a big
+        //where after the last number is printed a space is printed
+        cout << valid[i] << (i+1 == valid.size() ? "" : " ");
     }
     return 0;
 }
