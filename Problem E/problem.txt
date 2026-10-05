@@ -1,3 +1,5 @@
+Link - open.kattis.com/problems/exclusivedisplay
+
 The days-without-incident counter at your factory has become difficult
 to interpret. Every morning, the display is reset so that all segments are off. 
 When a digit is entered into the display, every segment belonging to that
